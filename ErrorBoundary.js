@@ -1,3 +1,4 @@
+// mostly code from reactjs.org/docs/error-boundaries.html
 import React, { Component } from "react";
 import { Link, Redirect } from "@reach/router";
 
@@ -19,7 +20,7 @@ class ErrorBoundary extends Component {
   }
   render() {
     if (this.state.redirect) {
-      return <Redirect to="/" />;
+      return <Redirect to="/" noThrow />;
     }
 
     if (this.state.hasError) {
